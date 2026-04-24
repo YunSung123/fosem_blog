@@ -1,5 +1,8 @@
 package com.tenco.blog.model;
 
+import ch.qos.logback.core.util.StringUtil;
+import com.tenco.blog.util.MyDateUtil;
+import io.micrometer.common.util.StringUtils;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -21,4 +24,9 @@ public class Board {
     private String content;
     private String username;
     private Timestamp createdAt;
+
+    // createdAt -> 포맷 하는 메서드 만들어 보기
+    public String getTime(){
+        return MyDateUtil.timestampFormat(createdAt);
+    }
 }

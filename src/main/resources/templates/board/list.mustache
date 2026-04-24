@@ -1,24 +1,22 @@
 {{> layout/header}}
 <div class="container p-5 flex-grow-1">
-    <div class="card">
-        <div class="card-header"><b>글쓰기 화면입니다</b></div>
-        <div class="card-body">
-            <!--  익명 게시글 작성    -->
-            <form action="/board/save" method="post">
-                <div class="mb-3">
-                    <input type="text" name="username"  class="form-control" placeholder="enter username">
-                </div>
-                <div class="mb-3">
-                    <input type="text" name="title" class="form-control" placeholder="enter title">
-                </div>
-                <div class="mb-3">
-                    <textarea type="text" name="content" rows="5" class="form-control" placeholder="enter title">
-                    </textarea>
-                </div>
-                <button class="btn btn-primary">글쓰기 완료</button>
-            </form>
+    {{#boardList}}
+        <div class="card mb-3">
+            <div class="card-body">
+                <h4 class="card-title mb-3">{{title}}</h4>
+                <!--  머스태치 문법은 getter 메서드를 가지고 오고 get은 탈락 가능 -->
+                <div>{{time}}</div>
+                <a href="/board/1" class="btn btn-primary">상세보기</a>
+            </div>
         </div>
-    </div>
+    {{/boardList}}
+
+
+
+    <ul class="pagination d-flex justify-content-center">
+        <li class="page-item"><a href="" class="page-link">Previous</a></li>
+        <li class="page-item"><a href="" class="page-link"> Next</a></li>
+    </ul>
 </div>
 
 {{> layout/footer}}
