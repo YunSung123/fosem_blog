@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class BlogApplication {
 
 	public static void main(String[] args) {
+		// http://localhost:8080/h2-console
 		SpringApplication.run(BlogApplication.class, args);
 	}
 

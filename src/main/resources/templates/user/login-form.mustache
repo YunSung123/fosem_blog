@@ -1,5 +1,18 @@
 {{> layout/header}}
-<div>
-    여기는 로그인 화면
+<div class="container p-5 flex-grow-1">
+    <div class="card">
+        <div class="card-header"><b>로그인을 해주세요</b></div>
+        <div class="card-body">
+            <form action="/login" method="post">
+                <div class="mb3">
+                    <input type="text" class="form-control" placeholder="enter username" name="username" value = "ssar">
+                </div>
+                <div class="mb3">
+                    <input type="password" class="form-control" placeholder="enter password" name="password" value="1234">
+                </div>
+                <button type="submit" class="btn btn-primary form-control">로그인</button>
+            </form>
+        </div>
+    </div>
 </div>
 {{>layout/footer}}
